@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33417.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeslaMateSolar", "TeslaMateSolar\TeslaMateSolar.csproj", "{9C926AEC-39D8-425C-8FE6-D425E65CF0E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeslaMateSolar.Tests", "TeslaMateSolar.Tests\TeslaMateSolar.Tests.csproj", "{AA4A6706-47DE-4D30-A72D-FF8A39A0B855}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C926AEC-39D8-425C-8FE6-D425E65CF0E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C926AEC-39D8-425C-8FE6-D425E65CF0E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C926AEC-39D8-425C-8FE6-D425E65CF0E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C926AEC-39D8-425C-8FE6-D425E65CF0E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA4A6706-47DE-4D30-A72D-FF8A39A0B855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA4A6706-47DE-4D30-A72D-FF8A39A0B855}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA4A6706-47DE-4D30-A72D-FF8A39A0B855}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA4A6706-47DE-4D30-A72D-FF8A39A0B855}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {04144E60-D9E5-4B3E-A13C-F680512C8B6A}
+	EndGlobalSection
+EndGlobal
