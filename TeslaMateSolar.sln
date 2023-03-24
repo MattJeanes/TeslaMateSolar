@@ -3,9 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33417.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeslaMateSolar", "TeslaMateSolar\TeslaMateSolar.csproj", "{9C926AEC-39D8-425C-8FE6-D425E65CF0E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeslaMateSolar", "TeslaMateSolar\TeslaMateSolar.csproj", "{9C926AEC-39D8-425C-8FE6-D425E65CF0E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeslaMateSolar.Tests", "TeslaMateSolar.Tests\TeslaMateSolar.Tests.csproj", "{AA4A6706-47DE-4D30-A72D-FF8A39A0B855}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeslaMateSolar.Tests", "TeslaMateSolar.Tests\TeslaMateSolar.Tests.csproj", "{AA4A6706-47DE-4D30-A72D-FF8A39A0B855}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{71A5133E-2716-4542-8C7E-B288B6014225}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		Directory.Build.props = Directory.Build.props
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

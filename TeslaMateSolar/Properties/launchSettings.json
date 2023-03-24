@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "http": {
+    "TeslaMateSolar": {
       "commandName": "Project",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
