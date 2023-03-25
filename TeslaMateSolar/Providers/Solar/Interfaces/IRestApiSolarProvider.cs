@@ -2,7 +2,7 @@
 
 namespace TeslaMateSolar.Providers.Solar.Interfaces;
 
-public interface IRestApiProvider : ISolarProvider
+public interface IRestApiSolarProvider : ISolarProvider
 {
     public Task UpdateState(RestApiState restState);
 }

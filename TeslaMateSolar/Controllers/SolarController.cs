@@ -21,9 +21,9 @@ public class SolarController : ControllerBase
     [HttpPost]
     public async Task<ActionResult> UpdateState([FromBody] RestApiState state)
     {
-        if (_solarProvider is IRestApiProvider restApiProvider)
+        if (_solarProvider is IRestApiSolarProvider restApiSolarProvider)
         {
-            await restApiProvider.UpdateState(state);
+            await restApiSolarProvider.UpdateState(state);
             return Accepted();
         }
         else

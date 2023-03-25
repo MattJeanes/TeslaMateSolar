@@ -4,6 +4,8 @@ using TeslaMateSolar.Data.Enums;
 using TeslaMateSolar.Data.Options;
 using TeslaMateSolar.Providers.Solar;
 using TeslaMateSolar.Providers.Solar.Interfaces;
+using TeslaMateSolar.Providers.Tesla;
+using TeslaMateSolar.Providers.Tesla.Interfaces;
 
 namespace TeslaMateSolar;
 
@@ -24,6 +26,11 @@ public class Program
             .ValidateDataAnnotations()
             .ValidateOnStart();
         services.AddSingleton(Hub.Default);
+        services.AddSingleton<ITeslaProvider, TeslaMateProvider>();
+        services.AddOptions<TeslaMateOptions>()
+            .BindConfiguration("TeslaMate")
+            .ValidateDataAnnotations()
+            .ValidateOnStart();
 
         var solarProvider = config.GetValue<SolarProvider?>("SolarProvider");
 
@@ -34,10 +41,10 @@ public class Program
                     .BindConfiguration("Grott")
                     .ValidateDataAnnotations()
                     .ValidateOnStart();
-                services.AddSingleton<ISolarProvider, GrottProvider>();
+                services.AddSingleton<ISolarProvider, GrottSolarProvider>();
                 break;
             case SolarProvider.RestApi:
-                services.AddSingleton<ISolarProvider, RestApiProvider>();
+                services.AddSingleton<ISolarProvider, RestApiSolarProvider>();
                 break;
             case null:
                 throw new ArgumentNullException(nameof(solarProvider));

@@ -2,8 +2,8 @@
 
 namespace TeslaMateSolar.Providers.Solar.Interfaces;
 
-public interface IRedisProvider : ISolarProvider
+public interface IMqttSolarProvider : ISolarProvider
 {
-    IEnumerable<string> RedisTopics { get; }
+    IEnumerable<string> MqttTopics { get; }
     Task HandleMessageAsync(MqttApplicationMessageReceivedEventArgs e);
 }

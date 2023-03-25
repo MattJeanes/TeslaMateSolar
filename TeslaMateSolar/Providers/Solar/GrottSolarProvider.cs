@@ -9,15 +9,15 @@ using TeslaMateSolar.Providers.Solar.Interfaces;
 
 namespace TeslaMateSolar.Providers.Solar;
 
-public class GrottProvider : IRedisProvider
+public class GrottSolarProvider : IMqttSolarProvider
 {
-    public IEnumerable<string> RedisTopics => new string[] { _options.TopicName };
+    public IEnumerable<string> MqttTopics => new string[] { _options.TopicName };
 
-    private readonly ILogger<GrottProvider> _logger;
+    private readonly ILogger<GrottSolarProvider> _logger;
     private readonly GrottOptions _options;
     private readonly Hub _hub;
 
-    public GrottProvider(ILogger<GrottProvider> logger, IOptions<GrottOptions> options, Hub hub)
+    public GrottSolarProvider(ILogger<GrottSolarProvider> logger, IOptions<GrottOptions> options, Hub hub)
     {
         _logger = logger;
         _options = options.Value;

@@ -5,12 +5,12 @@ using TeslaMateSolar.Providers.Solar.Interfaces;
 
 namespace TeslaMateSolar.Providers.Solar;
 
-public class RestApiProvider : IRestApiProvider
+public class RestApiSolarProvider : IRestApiSolarProvider
 {
-    private readonly ILogger<RestApiProvider> _logger;
+    private readonly ILogger<RestApiSolarProvider> _logger;
     private readonly Hub _hub;
 
-    public RestApiProvider(ILogger<RestApiProvider> logger, Hub hub)
+    public RestApiSolarProvider(ILogger<RestApiSolarProvider> logger, Hub hub)
     {
         _logger = logger;
         _hub = hub;
