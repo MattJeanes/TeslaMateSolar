@@ -1,4 +1,9 @@
+using PubSub;
 using TeslaMateSolar.Data;
+using TeslaMateSolar.Data.Enums;
+using TeslaMateSolar.Data.Options;
+using TeslaMateSolar.Providers.Solar;
+using TeslaMateSolar.Providers.Solar.Interfaces;
 
 namespace TeslaMateSolar;
 
@@ -8,11 +13,39 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        builder.Services.AddControllers();
-        builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
-        builder.Services.Configure<AppSettings>(builder.Configuration);
-        builder.Services.AddHostedService<Worker>();
+        var services = builder.Services;
+        var config = builder.Configuration;
+
+        services.AddControllers();
+        services.AddEndpointsApiExplorer();
+        services.AddSwaggerGen();
+        services.AddOptions<AppSettings>()
+            .Bind(config)
+            .ValidateDataAnnotations()
+            .ValidateOnStart();
+        services.AddSingleton(Hub.Default);
+
+        var solarProvider = config.GetValue<SolarProvider?>("SolarProvider");
+
+        switch (solarProvider)
+        {
+            case SolarProvider.Grott:
+                services.AddOptions<GrottOptions>()
+                    .BindConfiguration("Grott")
+                    .ValidateDataAnnotations()
+                    .ValidateOnStart();
+                services.AddSingleton<ISolarProvider, GrottProvider>();
+                break;
+            case SolarProvider.RestApi:
+                services.AddSingleton<ISolarProvider, RestApiProvider>();
+                break;
+            case null:
+                throw new ArgumentNullException(nameof(solarProvider));
+            default:
+                throw new ArgumentOutOfRangeException(nameof(solarProvider));
+        }
+
+        services.AddHostedService<Worker>();
 
         var app = builder.Build();
         app.MapControllers();

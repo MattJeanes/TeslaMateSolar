@@ -1,8 +1,8 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace TeslaMateSolar.Data.Energy;
+namespace TeslaMateSolar.Data.Solar;
 
-public class Growatt
+public class GrottState
 {
     [JsonPropertyName("device")]
     public string Device { get; set; }
@@ -14,9 +14,9 @@ public class Growatt
     public string Buffered { get; set; }
 
     [JsonPropertyName("values")]
-    public GrowattValues Values { get; set; }
+    public GrottValues Values { get; set; }
 
-    public class GrowattValues
+    public class GrottValues
     {
         [JsonPropertyName("pvstatus")]
         public int Pvstatus { get; set; }
@@ -218,8 +218,8 @@ public class Growatt
     }
 }
 
-[JsonSerializable(typeof(Growatt))]
-internal partial class GrowattContext : JsonSerializerContext
+[JsonSerializable(typeof(GrottState))]
+internal partial class GrottContext : JsonSerializerContext
 {
 
 }

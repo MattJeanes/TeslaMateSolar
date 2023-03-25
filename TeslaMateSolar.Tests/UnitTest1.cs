@@ -1,8 +1,10 @@
 namespace TeslaMateSolar.Tests;
 
-public class Tests {
+public class Tests
+{
     [Test]
-    public void Test1() {
+    public void Test1()
+    {
         Assert.Pass();
     }
 }

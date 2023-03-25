@@ -1,5 +1,12 @@
-﻿namespace TeslaMateSolar.Data;
+﻿using System.ComponentModel.DataAnnotations;
 
-public class AppSettings {
+namespace TeslaMateSolar.Data;
+
+public class AppSettings
+{
+    [Required]
     public string MqttConnectionUri { get; set; }
+
+    [Required]
+    public int? CarId { get; set; }
 }
