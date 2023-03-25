@@ -89,7 +89,16 @@ public class Worker : BackgroundService
 
     private async Task HandleMessageAsync(MqttApplicationMessageReceivedEventArgs e)
     {
-        if (_solarProvider is IRedisProvider redisProvider && redisProvider.RedisTopics.Contains(e.ApplicationMessage.Topic))
+        if (e.ApplicationMessage.Topic.StartsWith("teslamate/cars/"))
+        {
+            var type = e.ApplicationMessage.Topic.Split("/").Last();
+            if (type == "state")
+            {
+                var state = e.ApplicationMessage.ConvertPayloadToString();
+                _logger.LogInformation("Vehicle state: {State}", state);
+            }
+        }
+        else if (_solarProvider is IRedisProvider redisProvider && redisProvider.RedisTopics.Contains(e.ApplicationMessage.Topic))
         {
             await redisProvider.HandleMessageAsync(e);
         }
