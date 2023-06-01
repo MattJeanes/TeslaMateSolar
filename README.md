@@ -1,6 +1,6 @@
 # TeslaMateSolar
 
-## NOTE: THIS PROJECT IS HEAVY WIP
+## NOTE: This project is abandoned as [ChargeHQ](https://chargehq.net/) does everything this was going to do
 
 TeslaMateSolar is an extension to TeslaMate that allows you to control vehicle charging based on solar data.
 
